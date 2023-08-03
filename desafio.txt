@@ -1,0 +1,16 @@
+* # Turismo Desafio *
+
+A aplicação deverá consumir a api da marvel (https://developer.marvel.com/) onde buscará todos os herois e fazer uma listagem. Com a listagem de herois escolher quais herois estaremos gravando na nossa lista de herois (Banco).
+
+A Api deverá ter:
+
+- Cadastro de novo usuario
+- Envio de Email de boas vindas
+- Esqueci minha senha
+- Reset de senha
+- Login de usuario
+- Controle de rotas privadas
+- Busca dos super herois somente se logado. (Não gravar em banco)
+- Gravar em Banco somente os herois escolhidos
+
+Feito isso deverá subir no Github e me enviar o repositório.
