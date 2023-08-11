@@ -20,7 +20,7 @@ module.exports = async (request, response, next) => {
     }
 
     return next()
-  } catch (err) {
+  } catch (error) {
     throw new AppError(error.message, 401)
   }
 }

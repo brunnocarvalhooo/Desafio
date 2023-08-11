@@ -3,19 +3,22 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
-  return knex.schema.createTable('user_tokens', (table) => {
+  return knex.schema.createTable('lists', (table) => {
     table.increments('id').primary()
-    table.text('token').notNullable()
-    table.integer('user_id').notNullable()
+    table.text('title').notNullable()
+    table.text('description')
+    table.text('image')
+    table.json('heroes')
+
+    table.integer('user_id').unsigned().notNullable()
     table.foreign('user_id').references('id').inTable('users')
-    table.timestamp('created_at').defaultTo(knex.fn.now())
   })
-}
+};
 
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  return knex.schema.dropTable('user_tokens')
-}
+  return knex.schema.dropTable('lists')
+};

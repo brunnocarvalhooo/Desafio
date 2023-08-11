@@ -8,9 +8,11 @@ class MailProvider {
       debug: true,
       logger: true,
       secureConnection: process.env.MAIL_SECURITY,
-      tls: {
+      /*
+        tls: {
         ciphers: 'SSlv3',
-      },
+      }, 
+      */
       auth: {
         user: process.env.MAIL_USER,
         pass: process.env.MAIL_PASS,

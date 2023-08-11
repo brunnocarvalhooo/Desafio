@@ -6,6 +6,10 @@ const CreateUserService = require('../../services/CreateUserService')
 const ListAllUsersService = require('../../services/ListAllUsersService')
 const ForgotPasswordService = require('../../services/ForgotPasswordService')
 const ResetUserPasswordService = require('../../services/ResetUserPasswordService')
+const UpdateAvatarService = require('../../services/UpdateAvatarSercice')
+const ListUserService = require('../../services/ListUserService')
+const DeleteUserService = require('../../services/DeleteUserService')
+const UpdateUserService = require('../../services/UpdateUserService')
 
 module.exports = {
   async createUser(request, response) {
@@ -23,15 +27,45 @@ module.exports = {
   },
 
   async updateUser(request, response) {
-    return response.json({ message: 'User updated' })
+    const { name, email } = request.body
+    const { userId } = request.params
+    const { id } = request.user
+
+    const updateUserService = new UpdateUserService(usersRepository)
+
+    const userUpdated = await updateUserService.execute({
+      id: userId,
+      name,
+      email,
+      user_id: id,
+    })
+
+    return response.json({ data: userUpdated })
   },
 
   async deleteUser(request, response) {
+    const { userId } = request.params
+    const { id } = request.user
+
+    const deleteUserService = new DeleteUserService(usersRepository)
+
+    await deleteUserService.execute({ id: userId, user_id: id })
+
     return response.json({ message: 'User deleted' })
   },
 
   async listUser(request, response) {
-    return response.json({ message: 'User listed' })
+    const { userId } = request.params
+    const { id } = request.user
+
+    const listUserService = new ListUserService(usersRepository)
+
+    const user = await listUserService.execute({
+      id: userId,
+      user_id: id,
+    })
+
+    return response.json({ data: user })
   },
 
   async listAllUsers(request, response) {
@@ -39,6 +73,19 @@ module.exports = {
 
     const users = await listAllUsers.execute()
     return response.json({ data: users })
+  },
+
+  async updateAvatar(request, response) {
+    const { file, user } = request
+
+    const updateAvatar = new UpdateAvatarService(usersRepository)
+
+    const userUpdated = await updateAvatar.execute({
+      file,
+      user,
+    })
+
+    return response.json({ data: userUpdated })
   },
 
   async forgotPassword(request, reponse) {

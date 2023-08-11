@@ -4,13 +4,35 @@ A aplicação deverá consumir a api da marvel (https://developer.marvel.com/) o
 
 A Api deverá ter:
 
-- Cadastro de novo usuario
-- Envio de Email de boas vindas
-- Esqueci minha senha
-- Reset de senha
-- Login de usuario
-- Controle de rotas privadas
-- Busca dos super herois somente se logado. (Não gravar em banco)
-- Gravar em Banco somente os herois escolhidos
+- Cadastro de novo usuario (X)
+- Envio de Email de boas vindas (X)
+- Esqueci minha senha (X)
+- Reset de senha (X)
+- Login de usuario (X)
+- Controle de rotas privadas (X)
+- Busca dos super herois somente se logado. (Não gravar em banco) (X)
+- Gravar em Banco somente os herois escolhidos (X)
 
 Feito isso deverá subir no Github e me enviar o repositório.
+
+users 
+  createUser(X)
+  listUser(X)
+  listAllUsers(X)
+  forgotPassword(X)
+  resetPassword(X)
+  deleteUser(X)
+  updateUser(X)
+  updateAvatar(X)
+
+login
+  login(X)
+
+list
+  createList(X)
+  getHero(X)
+  getHeroes(X)
+  getListsByUser(X)
+  getListByUser(X)
+  updateList(X)
+  deleteList(X)

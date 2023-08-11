@@ -28,7 +28,7 @@ module.exports = {
         password: Joi.string().required().min(6),
       }
     })
-  },
+  }, 
 
   verifyPayloadForLogin() {
     return celebrate({

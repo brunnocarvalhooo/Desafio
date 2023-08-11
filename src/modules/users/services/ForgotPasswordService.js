@@ -26,7 +26,7 @@ class ForgotPasswordService {
 
     const mail = forgotPassword({ name: user.name, link })
 
-    await this.usersRepository.saveTokenInId(user.id, token)
+    await this.usersRepository.saveTokenInDb(user.id, token)
 
     return this.mailProvider.sendMail(email, 'Recuperação de senha', mail)
   }

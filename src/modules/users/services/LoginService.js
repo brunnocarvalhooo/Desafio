@@ -1,4 +1,8 @@
+const jwt = require('jsonwebtoken')
+
 const AppError = require('../../../shared/AppError')
+
+const { comparePassword } = require('../../../shared/utils/encrypt')
 
 class LoginService {
   constructor(usersRepository) {

@@ -10,6 +10,9 @@ const welcome = ({ name, token }) => {
   <body>
     <h1>Olá ${name}</h1>
     <span>Seja bem vindo a nossa plataforma de listagem de herois</span>
+
+    <br>
+    <br>
   
     <a href="http://localhost:3000/activate/${token}">Clique aqui para ativar sua conta</a>
   </body>
@@ -29,6 +32,8 @@ const forgotPassword = ({ name, link }) => {
   <body>
     <h1>Olá ${name}</h1>
     <span>Esqueceu sua senha? clique no link abaixo para resetar sua senha</span>
+
+    <br>
 
     <a href="${link}">
       <h5>Clique aqui para resetar sua senha</h5>
