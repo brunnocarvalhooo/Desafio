@@ -7,7 +7,7 @@ module.exports = {
         title: Joi.string().required(),
         description: Joi.string().allow(null, ''),
         heroes: Joi.array().required(),
-      }
+      },
     })
   },
 
@@ -15,7 +15,7 @@ module.exports = {
     return celebrate({
       [Segments.PARAMS]: {
         listId: Joi.string().required(),
-      }
+      },
     })
   },
 }
